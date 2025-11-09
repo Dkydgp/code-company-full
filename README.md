@@ -9,7 +9,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 ![Lint](https://github.com/Dkydgp/code-company-full/actions/workflows/lint.yml/badge.svg)
-![Score](https://github.com/Dkydgp/code-company-full/actions/workflows/score.yml/badge.svg)
+![Pylint](https://github.com/Dkydgp/code-company-full/actions/workflows/pylint.yml/badge.svg)
 
 ---
 
@@ -19,28 +19,27 @@
 It automatically discovers coding projects online, makes executive decisions (via AI roles), executes them autonomously, and displays the outcomes on a beautiful interactive frontend.
 
 🧩 Components:
-- **Flask Backend** → Runs the AI workflow (Technical Manager → CEO → Operations).
-- **React Frontend** → Displays live projects, statuses, and generated Python code.
-- **AI Engine (DeepSeek via OpenRouter)** → Handles logical reasoning and project execution.
-- **Web Search (Serper.dev)** → Used for real-time coding project discovery.
+- **Flask Backend** → Runs the AI workflow (Technical Manager → CEO → Operations)
+- **React Frontend** → Displays live projects, statuses, and generated Python code
+- **AI Engine (DeepSeek via OpenRouter)** → Handles reasoning and code generation
+- **Web Search (Serper.dev)** → Finds real coding challenges and ideas
 
 ---
 
 ## 🧠 Features
 
-✅ Full AI pipeline — from idea discovery to final code output  
+✅ Full AI pipeline — from discovery to final code output  
 ✅ Roles implemented: Technical Manager, CEO, Operations Manager  
-✅ Dynamic project execution and storage  
-✅ Integrated REST API (Flask backend)  
-✅ Interactive frontend dashboard (React + TailwindCSS + Framer Motion)  
-✅ Live project viewer with code preview, modal, and download options  
-✅ “Run Company” one-click workflow trigger  
-✅ Shows latest project and all project codes dropdown
+✅ Dynamic project execution and data persistence  
+✅ REST API-based backend (Flask)  
+✅ Live React frontend with TailwindCSS & Framer Motion  
+✅ Real-time project viewer with modal and code download  
+✅ “Run Company” one-click automation  
+✅ Highlights latest project and lists all project codes  
 
 ---
 
 ## 🧩 Project Structure
-
 code-company-full/
 │
 ├── code_company_backend/ # Flask backend
@@ -55,57 +54,44 @@ code-company-full/
 │ ├── tailwind.config.js
 │ └── ...
 │
+├── .github/
+│ └── workflows/
+│ ├── lint.yml
+│ └── pylint.yml
+│
 ├── .gitignore
 └── README.md
 
 
+---
 
-🧠 How It Works
-Workflow
+## 🧪 Continuous Integration (CI/CD)
 
-Technical Manager searches coding ideas online.
+Code Company includes **automated code quality checks** via **GitHub Actions**.
 
-CEO decides whether to approve or reject the project.
+### 🧰 Workflows
+| Workflow | Purpose | Badge |
+|-----------|----------|--------|
+| **PEP8 Lint** | Validates code style using `flake8` | ![Lint](https://github.com/Dkydgp/code-company-full/actions/workflows/lint.yml/badge.svg) |
+| **Pylint Quality** | Calculates Pylint score and uploads badge | ![Pylint](https://github.com/Dkydgp/code-company-full/actions/workflows/pylint.yml/badge.svg) |
 
-Operations Manager executes the project and generates Python code.
+---
 
-The system saves the output in JSON and updates the frontend dynamically.
+### 🧾 Universal Pylint Code Quality Check
 
-The frontend displays project details, summaries, and code in a beautiful UI.
+This workflow runs **Pylint** across your repo, uploads a score, and fails the CI if your code falls below the quality threshold.
 
-🎨 Frontend UI
+#### ✅ Features:
+- Evaluates all `.py` files  
+- Generates `pylint_report.txt` and `pylint_score.json`  
+- Commits the score JSON for public visibility  
+- Enforces minimum score (default `8.0/10`)  
+- Uploads artifacts and badges automatically  
 
-Key UI elements:
-
-Sidebar navigation with quick actions
-
-“Latest Project” highlight section
-
-“All Codes” dropdown list (for exploring past projects)
-
-Animated project grid (Framer Motion)
-
-Detailed modal with Summary, Code, and Conclusion
-
-📸 Screenshots (placeholders)
-
-Add screenshots later after deployment.
-
-Dashboard	Project Details
-
-	
-🚀 Deployment
-
-You can host the stack easily:
-
-Backend: Render / Railway / Hugging Face Spaces
-
-Frontend: Vercel / Netlify / GitHub Pages
-
-Update CORS and API base URLs accordingly.
-
-🧑‍💻 Author
-
-👨‍💻 Dipak Kumar Yadav
-Creator of Code Company (Beta)
-📧 yadavdipakkr@gmail.com
+#### 🧩 Example usage in another repo:
+```yaml
+jobs:
+  quality_check:
+    uses: Dkydgp/code-company-full/.github/workflows/pylint.yml@main
+    with:
+      min_score: "8.5"
