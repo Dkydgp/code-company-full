@@ -8,10 +8,10 @@
 ![Tailwind](https://img.shields.io/badge/UI-TailwindCSS-38B2AC?style=for-the-badge&logo=tailwindcss)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
-![Lint](https://github.com/Dkydgp/code-company-full/actions/workflows/lint.yml/badge.svg)
-![Pylint](https://github.com/Dkydgp/code-company-full/actions/workflows/pylint.yml/badge.svg)
+### 🧠 Code Quality (Pylint)
 
----
+![Pylint Score](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Dkydgp/Memora/main/pylint_score.json?cacheBust=1)
+![Workflow Status](https://github.com/Dkydgp/Memora/actions/workflows/pylint.yml/badge.svg)
 
 ## 🏗️ Overview
 
