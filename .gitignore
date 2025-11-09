@@ -1,0 +1,22 @@
+# Node
+code-company-frontend/node_modules/
+code-company-frontend/dist/
+code-company-frontend/.vite/
+code-company-frontend/.env
+code-company-frontend/.DS_Store
+
+# Python / Flask
+code_company_backend/__pycache__/
+code_company_backend/instance/
+code_company_backend/.env
+code_company_backend/.venv/
+code_company_backend/venv/
+*.pyc
+
+# Common
+.env
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,32 @@
+[
+    {
+        "type": "search",
+        "query": "python project",
+        "count": 2
+    },
+    {
+        "type": "search",
+        "query": "python project\n",
+        "count": 2
+    },
+    {
+        "type": "search",
+        "query": "ai code generator",
+        "count": 2
+    },
+    {
+        "type": "search",
+        "query": "python ai project",
+        "count": 10
+    },
+    {
+        "type": "search",
+        "query": "best ai coding project ideas",
+        "count": 10
+    },
+    {
+        "type": "search",
+        "query": "Narendra modi todays plan",
+        "count": 10
+    }
+]
