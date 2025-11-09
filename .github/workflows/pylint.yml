@@ -1,1 +1,18 @@
+name: Pylint Quality Check (call central)
 
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: write   # allow committing pylint_score.json back to repo
+  checks: write
+  actions: read
+
+jobs:
+  call_universal:
+    uses: Dkydgp/.github/.github/workflows/pylint.yml@main
+    with:
+      min_score: '8.0'
